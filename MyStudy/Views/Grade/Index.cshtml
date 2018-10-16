@@ -1,0 +1,54 @@
+﻿@model IEnumerable<MyStudyService.Grade.DTO.GradeViewModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <p>
+        @using (Html.BeginForm())
+        {
+            <input type="text" placeholder="请输入班级关键字" name="KeyWords"/>
+            <input type="submit" value="搜索"/>
+        }
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GradeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GradeName)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GradeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GradeName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.GradeId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.GradeId  }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.GradeId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

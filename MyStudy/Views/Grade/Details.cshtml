@@ -1,0 +1,42 @@
+﻿@model MyStudyService.Grade.DTO.GradeViewModel 
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>GradeViewModel</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.GradeId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.GradeId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.GradeName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.GradeName)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
